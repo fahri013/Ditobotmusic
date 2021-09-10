@@ -97,7 +97,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("etc/font.otf", 60)
-    draw.text((40, 550), f"Playing here....", (0, 0, 0), font=font)
+    draw.text((40, 550), f"Telah terputar....", (0, 0, 0), font=font)
     draw.text((40, 630),
         f"{title}",
         (0, 0, 0),
@@ -121,18 +121,18 @@ async def playlist(client, message):
         temp.append(t)
     now_playing = temp[0][0]
     by = temp[0][1].mention(style="md")
-    msg = "**Now playing** on {}".format(message.chat.title)
+    msg = "**Yg terputar** di gc {}".format(message.chat.title)
     msg += "\n• "+ now_playing
-    msg += "\n• Requested By "+by
+    msg += "\n• Requested dari jamet"+by
     temp.pop(0)
     if temp:
         msg += "\n\n"
-        msg += "**Queued Song**"
+        msg += "**Lagu dalam antrian**"
         for song in temp:
             name = song[0]
             usr = song[1].mention(style="md")
             msg += f"\n• {name}"
-            msg += f"\n• Requested by {usr}\n"
+            msg += f"\n• Requested dari jamet{usr}\n"
     await message.reply_text(msg)
                             
 # ============================= Settings =========================================
@@ -166,7 +166,7 @@ def r_ply(type_):
                 InlineKeyboardButton("📖 PlayList", "playlist"),
             ],
             [       
-                InlineKeyboardButton("🗑 Close", "cls")
+                InlineKeyboardButton("🗑 Tutup", "cls")
             ]        
         ]
     )
@@ -377,7 +377,7 @@ async def m_cb(b, cb):
                 
                 ],
                 [       
-                    InlineKeyboardButton("🗑 Close", "cls")
+                    InlineKeyboardButton("🗑 Tutup", "cls")
                 ]        
             ]
         )
@@ -424,7 +424,7 @@ async def play(_, message: Message):
     global useer
     if message.chat.id in DISABLED_GROUPS:
         return    
-    lel = await message.reply("🔄 **processing...**")
+    lel = await message.reply("🔄 **sabarki bosku...**")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
     try:
@@ -504,15 +504,16 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"❌ **lagu dengan durasi lebih dari** `{DURATION_LIMIT}` **menit tidak dapat diputar!**"
+                f"❌ **bujeedd lagu lu lebih dari** `{DURATION_LIMIT}` **msh bnyk orang mau request woii!**"
             )
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
-                    InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls"),
+                    InlineKeyboardButton("🖱 𝐦𝐞𝐧𝐮", callback_data="menu"),
+                    InlineKeyboardButton("🗑 𝐭𝐮𝐭𝐮𝐩", callback_data="cls"),
                 ],[
-                    InlineKeyboardButton("📣 ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}")
+                    InlineKeyboardButton("📣 𝐌𝐲 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 📣", url=f"https://t.me/{UPDATES_CHANNEL}")
+                    InlineKeyboardButton("💬 𝐌𝐲 𝐆𝐫𝐨𝐮𝐩 💬", url=f"https://t.me/{GROUP_SUPPORT}") 
                 ],
             ]
         )
