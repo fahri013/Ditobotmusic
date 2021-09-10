@@ -1,4 +1,4 @@
-<h2 align="centre">🎶 VEEZ MUSIC BOT</h2>
+<h2 align="centre">🎶 DITO MUSIC BOT</h2>
 
 ### Veez Music is a telegram bot project that's allow you to play music on telegram voice chat group.
 
@@ -96,6 +96,7 @@ For deployment on railway you can see the full of [Necessary Variables Here](htt
 [![Deploy+on+Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/fahri013/Ditobotmusic&envs=SESSION_NAME,BOT_TOKEN,BOT_USERNAME,BOT_NAME,GROUP_SUPPORT,ASSISTANT_NAME,OWNER_NAME,OWNER_ID,DATABASE_URL,LOG_CHANNEL,BROADCAST_AS_COPY,BG_IMAGE,UPDATES_CHANNEL,API_ID,API_HASH,PMPERMIT,SUDO_USERS,DURATION_LIMIT,THUMB_IMG)
 
 ### Special Credits 💖
+- [Ardhito](https://github.com/fahri013/Ditobotmusic): Dev 
 - [Levina](https://github.com/levina-lab): Dev
 - [Tofik](https://github.com/tofikdn): Dev
 - [Zxce3](https://github.com/Zxce3): Dev
